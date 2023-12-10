@@ -126,7 +126,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/events/interaction/interactionCreatedButton.event.ts</code>
+            <code>src/events/interaction/interactionAutocomplete.event.ts</code>
         </p>
 
 
@@ -197,7 +197,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/events/interaction/interactionCreatedButton.event.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/events/interaction/interactionAutocomplete.event.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -311,7 +311,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseEvent.html#source" target="_self" >BaseEvent:22</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseEvent.html#source" target="_self" >BaseEvent:24</a></code>
 </div>
                         </td>
                     </tr>
@@ -383,6 +383,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BaseInteraction, BaseEvent, BaseClient } from &quot;@src/structures&quot;;
 import { Events, Interaction } from &quot;discord.js&quot;
 import { Exception } from &quot;@src/structures/exception/exception.class&quot;;
+import { Logger, LoggerTypeEnum, LoggerFileEnum } from &quot;@src/structures/logger/logger.class&quot;;
+import { t } from &quot;i18next&quot;;
 
 /**
  * @description InteractionCreated event
@@ -402,21 +404,19 @@ export class InteractionCreatedEvent extends BaseEvent {
 	 * @override
 	 */
 	async execute(client: BaseClient, interaction: Interaction): Promise&lt;void&gt; {
-		if (!interaction.isButton()) return;
+		if (!interaction.isAutocomplete()) return;
 		for (const module of client.getModules().values()) {
 			if (module.getInteractions().size &#x3D;&#x3D; 0) continue;
-			if (!module.getInteractions().has(interaction.customId)) continue;
-			const command: BaseInteraction | undefined &#x3D; module.getInteractions().get(interaction.customId);
+			if (!module.getInteractions().has(interaction.commandName)) continue;
+			const command: BaseInteraction | undefined &#x3D; module.getInteractions().get(interaction.commandName);
 			if (!command) continue;
 			try {
-				await command.execute(client, interaction);
+				console.log(&#x60;Command ${command.getName()} was executed by ${interaction.user.tag} (${interaction.user.id})&#x60;);
+				await command.autoComplete(interaction, client);
 			} catch (error: unknown) {
 				if (error instanceof Error)
-					Exception.logToFile(error, true);
-				if (!interaction) return;
-				if (interaction.replied) return;
-				if (interaction.deferred) await interaction.editReply({ content: &quot;There was an error while executing this command!&quot;});
-				if (!interaction.deferred) await interaction.reply({ content: &quot;There was an error while executing this command!&quot;, ephemeral: true});
+					await Logger.log(Exception.getErrorMessageLogFormat(error.message, error.stack), &quot;error&quot;, true, LoggerTypeEnum.ERROR, client);
+
 			}
 		}
 	}

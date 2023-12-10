@@ -62,10 +62,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/addRoleCommand.html" data-type="entity-link" >addRoleCommand</a>
                             </li>
                             <li class="link">
+                                <a href="classes/AdminModule.html" data-type="entity-link" >AdminModule</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/BaseClient.html" data-type="entity-link" >BaseClient</a>
                             </li>
                             <li class="link">
-                                <a href="classes/BaseCommand.html" data-type="entity-link" >BaseCommand</a>
+                                <a href="classes/BaseCommand.html" data-type="entity-link" class="deprecated-name">BaseCommand</a>
                             </li>
                             <li class="link">
                                 <a href="classes/BaseEvent.html" data-type="entity-link" >BaseEvent</a>
@@ -80,13 +83,28 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/BaseSlashCommand.html" data-type="entity-link" >BaseSlashCommand</a>
                             </li>
                             <li class="link">
+                                <a href="classes/BaseSubGroupSlashCommand.html" data-type="entity-link" >BaseSubGroupSlashCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/BaseSubSlashCommand.html" data-type="entity-link" >BaseSubSlashCommand</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/BonkSlashCommand.html" data-type="entity-link" >BonkSlashCommand</a>
                             </li>
                             <li class="link">
                                 <a href="classes/CreateRoleMemberCommand.html" data-type="entity-link" >CreateRoleMemberCommand</a>
                             </li>
                             <li class="link">
-                                <a href="classes/DBConnection.html" data-type="entity-link" >DBConnection</a>
+                                <a href="classes/DatabaseModuleHandler.html" data-type="entity-link" >DatabaseModuleHandler</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/DateSlashCommand.html" data-type="entity-link" >DateSlashCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/DisableSlashCommand.html" data-type="entity-link" >DisableSlashCommand</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/EnableSlashCommand.html" data-type="entity-link" >EnableSlashCommand</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Exception.html" data-type="entity-link" >Exception</a>
@@ -98,13 +116,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/GuildCreateEvent.html" data-type="entity-link" >GuildCreateEvent</a>
                             </li>
                             <li class="link">
-                                <a href="classes/GuildHandler.html" data-type="entity-link" >GuildHandler</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/GuildUpdateEvent.html" data-type="entity-link" >GuildUpdateEvent</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/HeadButtonInteraction.html" data-type="entity-link" >HeadButtonInteraction</a>
                             </li>
                             <li class="link">
                                 <a href="classes/HeadTalesCommand.html" data-type="entity-link" >HeadTalesCommand</a>
@@ -143,10 +155,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/InteractionCreatedEvent-5.html" data-type="entity-link" >InteractionCreatedEvent</a>
                             </li>
                             <li class="link">
+                                <a href="classes/InteractionCreatedEvent-6.html" data-type="entity-link" >InteractionCreatedEvent</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Jikan.html" data-type="entity-link" >Jikan</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/Logger.html" data-type="entity-link" >Logger</a>
                             </li>
                             <li class="link">
-                                <a href="classes/LoggerEnum.html" data-type="entity-link" >LoggerEnum</a>
+                                <a href="classes/LoggerFileEnum.html" data-type="entity-link" >LoggerFileEnum</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/LoggerTypeEnum.html" data-type="entity-link" >LoggerTypeEnum</a>
                             </li>
                             <li class="link">
                                 <a href="classes/MemberJoinEvent.html" data-type="entity-link" >MemberJoinEvent</a>
@@ -171,6 +192,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/ModerationModule.html" data-type="entity-link" >ModerationModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ModuleSlashCommand.html" data-type="entity-link" >ModuleSlashCommand</a>
                             </li>
                             <li class="link">
                                 <a href="classes/MuteSlashCommand.html" data-type="entity-link" >MuteSlashCommand</a>
@@ -260,16 +284,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/PanelSendChannelInteraction-2.html" data-type="entity-link" >PanelSendChannelInteraction</a>
                             </li>
                             <li class="link">
-                                <a href="classes/PanelTicketEnum.html" data-type="entity-link" >PanelTicketEnum</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/PanelTicketHandler.html" data-type="entity-link" >PanelTicketHandler</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/PanelTranscriptInteraction.html" data-type="entity-link" >PanelTranscriptInteraction</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/PongCommand.html" data-type="entity-link" >PongCommand</a>
                             </li>
                             <li class="link">
                                 <a href="classes/PongSlashCommand.html" data-type="entity-link" >PongSlashCommand</a>
@@ -305,9 +320,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/TicketDeleteButtonInteraction.html" data-type="entity-link" >TicketDeleteButtonInteraction</a>
                             </li>
                             <li class="link">
-                                <a href="classes/TicketHandler.html" data-type="entity-link" >TicketHandler</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/TicketManager.html" data-type="entity-link" >TicketManager</a>
                             </li>
                             <li class="link">
@@ -341,7 +353,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/UnmuteSlashCommand.html" data-type="entity-link" >UnmuteSlashCommand</a>
                             </li>
                             <li class="link">
-                                <a href="classes/UserHandler.html" data-type="entity-link" >UserHandler</a>
+                                <a href="classes/WaifuModule.html" data-type="entity-link" >WaifuModule</a>
                             </li>
                         </ul>
                     </li>
@@ -357,7 +369,43 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/BaseClientInfo.html" data-type="entity-link" >BaseClientInfo</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/EmbebError.html" data-type="entity-link" >EmbebError</a>
+                                <a href="interfaces/BaseCommandOptions.html" data-type="entity-link" >BaseCommandOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/BaseInteractionOptions.html" data-type="entity-link" >BaseInteractionOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/BaseSlashCommandOptions.html" data-type="entity-link" >BaseSlashCommandOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/DatabaseFieldSchema.html" data-type="entity-link" >DatabaseFieldSchema</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/DatabaseGlobalSchema.html" data-type="entity-link" >DatabaseGlobalSchema</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/DatabaseGuildSchema.html" data-type="entity-link" >DatabaseGuildSchema</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/DatabaseSchemas.html" data-type="entity-link" >DatabaseSchemas</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/DatabaseUserSchema.html" data-type="entity-link" >DatabaseUserSchema</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/EmbedError.html" data-type="entity-link" >EmbedError</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/JikanCharacter.html" data-type="entity-link" >JikanCharacter</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/JikanImage.html" data-type="entity-link" >JikanImage</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/JikanPagination.html" data-type="entity-link" >JikanPagination</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/JikanSearchCharacter.html" data-type="entity-link" >JikanSearchCharacter</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/SlashCommandOptions.html" data-type="entity-link" >SlashCommandOptions</a>
@@ -377,6 +425,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="miscellaneous/functions.html" data-type="entity-link">Functions</a>
+                            </li>
+                            <li class="link">
+                                <a href="miscellaneous/typealiases.html" data-type="entity-link">Type aliases</a>
                             </li>
                             <li class="link">
                                 <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>

@@ -1,0 +1,922 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Kikku-Bot</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">Kikku-Bot</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  DatabaseUserSchema</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/structures/base/BaseModule.class.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#createdAt" 
+>
+                                            createdAt
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#enabled" 
+>
+                                            enabled
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#fields" 
+>
+                                            fields
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#timestamps" 
+>
+                                            timestamps
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#updatedAt" 
+>
+                                            updatedAt
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="createdAt"></a>
+                                        <span class="name "><b>createdAt</b>
+                                            <a href="#createdAt">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>createdAt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="enabled"></a>
+                                        <span class="name "><b>enabled</b>
+                                            <a href="#enabled">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>enabled:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="fields"></a>
+                                        <span class="name "><b>fields</b>
+                                            <a href="#fields">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>fields:         <code><a href="../interfaces/DatabaseFieldSchema.html" target="_self" >Array&lt;DatabaseFieldSchema&gt;</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/DatabaseFieldSchema.html" target="_self" >Array&lt;DatabaseFieldSchema&gt;</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="timestamps"></a>
+                                        <span class="name "><b>timestamps</b>
+                                            <a href="#timestamps">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>timestamps:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="updatedAt"></a>
+                                        <span class="name "><b>updatedAt</b>
+                                            <a href="#updatedAt">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>updatedAt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BaseCommand, BaseInteraction, BaseClient, BaseSlashCommand } from &quot;@src/structures&quot;;
+import * as Sequelize from &quot;sequelize&quot;;
+import { Locale, Routes } from &quot;discord.js&quot;;
+import fs from &quot;fs&quot;;
+import { Exception } from &quot;../exception/exception.class&quot;;
+import { type } from &quot;os&quot;;
+import Module from &quot;module&quot;;
+import { GuildHandler } from &quot;kikku-database-middleware&quot;;
+
+interface DatabaseFieldSchema {
+	name: string;
+	type: Sequelize.DataType;
+	allowNull?: boolean;
+	defaultValue?: unknown;
+}
+
+interface DatabaseGlobalSchema {
+	fields: Array&lt;DatabaseFieldSchema&gt;;
+	enabled?: boolean;
+	timestamps?: boolean;
+	createdAt?: boolean;
+	updatedAt?: boolean;
+}
+
+interface DatabaseUserSchema {
+	fields: Array&lt;DatabaseFieldSchema&gt;;
+	enabled?: boolean;
+	timestamps?: boolean;
+	createdAt?: boolean;
+	updatedAt?: boolean;
+}
+
+interface DatabaseGuildSchema {
+	fields: Array&lt;DatabaseFieldSchema&gt;;
+	enabled?: boolean;
+	timestamps?: boolean;
+	createdAt?: boolean;
+	updatedAt?: boolean;
+}
+
+export interface DatabaseSchemas {
+	global?: DatabaseGlobalSchema;
+	user?: DatabaseUserSchema;
+	guild?: DatabaseGuildSchema;
+}
+
+/**
+ * @description Base class for modules
+ * @category BaseClass
+ */
+export abstract class BaseModule {
+
+	private name: string;
+	private interactions: Map&lt;string, BaseInteraction&gt; &#x3D; new Map();
+	private aliases: Map&lt;string, BaseCommand&gt; &#x3D; new Map();
+	private enabled: boolean;
+	private description: string;
+	// May need to change this to a Collection&lt;string, BaseCommand&gt; if we want to add more properties to the commands same goes the aliases
+	// private commands: Collection&lt;string, BaseCommand&gt; &#x3D; new Collection();
+	private commands: Map&lt;string, BaseCommand&gt; &#x3D; new Map();
+	private databaseSchemas?: DatabaseSchemas;
+
+	/**
+	 * @description Creates a new module
+	 * @param name 
+	 * @param isEnabled 
+	 */
+	constructor(name: string, description?: string, isEnabled?: boolean) {
+		this.name &#x3D; name;
+		this.description &#x3D; description || &quot;No description provided&quot;;
+		this.enabled &#x3D; isEnabled || true;
+	}
+
+	/**
+	 * @description Return interactions of the module
+	 * @returns {Map&lt;string, BaseInteraction&gt;}
+	 * @example
+	 * // returns Map(1) { &#x27;ping&#x27; &#x3D;&gt; [Function: Ping] }
+	 * module.getInteractions();
+	 */
+	public getInteractions(): Map&lt;string, BaseInteraction&gt; {
+		return this.interactions;
+	}
+
+	/**
+	 * @description Returns the name of the module
+	 * @returns {string}
+	 */
+	public getName(): string {
+		return this.name;
+	}
+		
+
+	/**
+	 * @description Returns the description of the module
+	 * @returns {string}
+	 */
+	public getDescription(): string {
+		return this.description;
+	}
+
+	/**
+	 * @description Returns the active status of the module
+	 * @returns {boolean}
+	 * @example
+	 * // returns true
+	 * module.isEnabled();
+	 */
+	public isEnabled(): boolean {
+		return this.enabled;
+	}
+
+	/**
+	 * @description Returns the active status of the module for the guild
+	 * @param {string} guildId
+	 * @returns {boolean}
+	 * @example
+	 * // returns Promise&lt;true&gt;
+	 * module.isGuildEnabled();
+	 */
+	public async isGuildEnabled(guildId: string): Promise&lt;boolean&gt; {
+		const guildHandler &#x3D; await GuildHandler.getGuildById(guildId);
+		if (!guildHandler) return false;
+		return guildHandler.getModuleState(this.name);
+	}
+
+	/**
+	 * @description Sets the isEnabled status of the module
+	 * @param {boolean} isEnabled
+	 * @example
+	 * // sets the isEnabled status to false
+	 * module.setActive(false);
+	 */
+	public setisEnabled(isEnabled: boolean): void {
+		this.enabled &#x3D; isEnabled;
+	}
+
+	/**
+	 * @description Returns the commands of the module
+	 * @returns {Map&lt;string, BaseCommand&gt;}
+	 * @example
+	 * // returns Map(1) { &#x27;ping&#x27; &#x3D;&gt; [Function: Ping] }
+	 * module.getCommands();
+	 */
+	public getCommands(): Map&lt;string, BaseCommand&gt; {
+		return this.commands;
+	}
+	
+	/**
+	 * @description Checks if the module has a command
+	 * @param {string} name
+	 * @returns {boolean}
+	 * @example
+	 * // returns true
+	 * module.hasCommand(&#x27;ping&#x27;);
+	 */
+	public hasCommand(name: string): boolean {
+		return this.commands.has(name) || this.aliases.has(name);
+	}
+
+	/**
+	 * @description Returns a command from the module
+	 * @param {string} name
+	 * @returns {BaseCommand | undefined}
+	 * @example
+	 * // returns [Function: Ping]
+	 * module.getCommand(&#x27;ping&#x27;);
+	 */
+	public getCommand(name: string): BaseCommand | undefined {
+		if (this.commands.has(name)) return this.commands.get(name);
+		if (this.aliases.has(name)) return this.aliases.get(name);
+		return undefined;
+	}
+
+	/**
+	 * @description Loads commands into the module
+	 * @param {string} path
+	 * @example
+	 * // loads commands from src\commands\ping
+	 * module.loadCommands(&#x27;src/commands/ping&#x27;);
+	 * @example
+	 */
+	async loadCommands(path: string) {
+		const commandFiles &#x3D; await fs.promises.readdir(path);
+		for (const file of commandFiles) {
+			const lstat &#x3D; await fs.promises.lstat(&#x60;${path}/${file}&#x60;);
+			if (lstat.isDirectory()) {
+				this.loadCommands(&#x60;${path}/${file}&#x60;);
+				continue;
+			}
+			if (!file.endsWith(&quot;command.ts&quot;)) continue;
+			const Command &#x3D; (await import(&#x60;${path}/${file}&#x60;));
+			for (const kVal in Object.keys(Command)) {
+				const value &#x3D; Object.values(Command)[kVal];
+				try {
+					const command &#x3D; new (value as any)();
+					this.commands.set(command.name, command);
+					if (!command.aliases) continue;
+					for (const alias of command.aliases) {
+						this.aliases.set(alias, command);
+					}
+				} catch (error: unknown) {
+					if (error instanceof Error)
+						throw new Exception(error.message)
+				}
+			}
+		}
+	}
+
+	/**
+	 * @description Loads slash commands into the module
+	 * @param {string} path
+	 * @param path 
+	 */
+	async loadSlashCommands(path: string): Promise&lt;void&gt; {
+		const commandFiles &#x3D; await fs.promises.readdir(path);
+		for (const file of commandFiles) {
+			const lstat &#x3D; await fs.promises.lstat(&#x60;${path}/${file}&#x60;);
+			if (lstat.isDirectory()) {
+				await this.loadSlashCommands(&#x60;${path}/${file}&#x60;);
+				continue;
+			}
+			if (!file.endsWith(&quot;interaction.ts&quot;)) continue;
+			const Interaction &#x3D; (await import(&#x60;${path}/${file}&#x60;));
+			for (const kVal in Object.keys(Interaction)) {
+				const value &#x3D; Object.values(Interaction)[kVal];
+				try {
+					const interaction &#x3D; new (value as any)();
+					this.interactions.set(interaction.name, interaction);
+				} catch (error) {
+					console.error(error);
+					console.log(&#x60;Could not load interaction ${path}/${file}&#x60;);
+				}
+			}
+		}
+	}
+
+	/**
+	 * @description Registers slash commands
+	 * @param {BaseClient} client Discord Client
+	 * @param {string?} guildId Guild ID
+	 * @example
+	 * // registers slash commands globally
+	 * module.registerSlashCommands(client);
+	 * @example
+	 * // registers slash commands in a guild
+	 * module.registerSlashCommands(client, &#x27;123456789&#x27;);
+	 */
+	public async registerSlashCommands(client: BaseClient, alreadyAdded: Array&lt;any&gt; , guildId?: string): Promise&lt;{ hasChanged: boolean; registered: string[]; }&gt; {
+		const toRegister: any &#x3D; [];
+		const registered &#x3D; [];
+		let hasChanged &#x3D; false;
+		for (const [, interaction] of this.interactions) {
+			if (!(interaction instanceof BaseSlashCommand)) continue;
+			registered.push(interaction.getName());
+			const match &#x3D; alreadyAdded.find(i &#x3D;&gt; i.name &#x3D;&#x3D;&#x3D; interaction.getName());
+			const statusIsChanged &#x3D; this.isChanged(interaction, match)
+			if (match &amp;&amp; !statusIsChanged) {
+				console.log(&#x60;Interaction ${interaction.getName()} already added&#x60;);
+				continue;
+			}
+			this.printChangement(statusIsChanged);
+			toRegister.push(interaction.getSlashCommand().toJSON());
+		}
+		
+		if (toRegister.length &#x3D;&#x3D;&#x3D; 0) {
+			console.log(&#x60;No slash commands to register for module ${this.name}&#x60;);
+			return {hasChanged, registered};
+		}
+		
+		console.table(toRegister)
+		if (!guildId) {
+			for (const command of toRegister) {
+				await client.getBaseRest().post(
+					Routes.applicationCommands(client.getClientId()),
+					{ body: command }
+				)
+			}
+		} else {
+			for (const command of toRegister) {
+				await client.getBaseRest().post(
+					Routes.applicationGuildCommands(client.getClientId(), guildId),
+					{ body: command }
+				)
+			}
+		}
+		hasChanged &#x3D; true;
+
+		return { hasChanged, registered };
+	}
+
+	private printChangement(index: number): boolean {
+		switch (index) {
+		case 1:
+			console.log(&quot;Interaction is new&quot;);
+			break;
+		case 2:
+			console.log(&quot;Interaction description has changed&quot;);
+			break;
+		case 3:
+			console.log(&quot;Interaction localizations has changed&quot;);
+			break;
+		case 4:
+			console.log(&quot;Interaction permissions has changed&quot;);
+			break;
+		case 5:
+			console.log(&quot;Interaction options has changed&quot;);
+			break;
+		case 6:
+			console.log(&quot;Interaction permissions has changed&quot;);
+			break;
+		default:
+			console.log(&quot;Interaction has not changed&quot;);
+			break;
+		}
+		return index !&#x3D; 0;
+	}
+
+	private isChanged(interaction: BaseSlashCommand, restInteraction: any): number {
+		const isLocalizationsChanged &#x3D; (interaction: BaseSlashCommand, restInteraction: any): boolean &#x3D;&gt; {
+			if (interaction.getNameLocalizations() !&#x3D; null &amp;&amp; restInteraction.name_localizations &#x3D;&#x3D; null) return true;
+			if (interaction.getNameLocalizations() &#x3D;&#x3D; null &amp;&amp; restInteraction.name_localizations !&#x3D; null) return true;
+			if ((interaction.getNameLocalizations() !&#x3D;&#x3D; restInteraction.name_localizations) &amp;&amp; interaction.getNameLocalizations() !&#x3D; null &amp;&amp; restInteraction.name_localizations !&#x3D; null) {
+				const keys &#x3D; Object.entries(Locale).filter(([, value]) &#x3D;&gt; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;).map(([, value]) &#x3D;&gt; value);
+				for (const key of keys) {
+					if (interaction.getNameLocalizations()![key] !&#x3D;&#x3D; restInteraction.name_localizations[key]) {
+						console.log(interaction.getNameLocalizations()![key], restInteraction.name_localizations[key])
+						return true;
+					}
+				}
+			}
+			if (interaction.getDescriptionLocalizations() !&#x3D; null &amp;&amp; restInteraction.description_localizations &#x3D;&#x3D; null) return true;
+			if (interaction.getDescriptionLocalizations() &#x3D;&#x3D; null &amp;&amp; restInteraction.description_localizations !&#x3D; null) return true;
+			if ((interaction.getDescriptionLocalizations() !&#x3D;&#x3D; restInteraction.description_localizations) &amp;&amp; interaction.getDescriptionLocalizations() !&#x3D; null &amp;&amp; restInteraction.description_localizations !&#x3D; null) {
+				const keys &#x3D; Object.entries(Locale).filter(([, value]) &#x3D;&gt; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;).map(([, value]) &#x3D;&gt; value);
+				for (const key of keys) {
+					if (interaction.getDescriptionLocalizations()![key] !&#x3D;&#x3D; restInteraction.description_localizations[key]) {
+						console.log(interaction.getDescriptionLocalizations()![key], restInteraction.description_localizations[key])
+						return true;
+					}
+				}
+			}
+
+			for (const option of interaction.getOptions()) {
+				const restOption &#x3D; restInteraction.options.find((o: any) &#x3D;&gt; o.name &#x3D;&#x3D;&#x3D; option.name);
+				if (restOption &#x3D;&#x3D;&#x3D; undefined) return true;
+				if (option.nameLocalisation !&#x3D; null &amp;&amp; restOption.name_localizations &#x3D;&#x3D; null) return true;
+				if (option.nameLocalisation &#x3D;&#x3D; null &amp;&amp; restOption.name_localizations !&#x3D; null) return true;
+				if ((option.nameLocalisation !&#x3D;&#x3D; restOption.name_localizations) &amp;&amp; option.nameLocalisation !&#x3D; null &amp;&amp; restOption.name_localizations !&#x3D; null) {
+					const keys &#x3D; Object.entries(Locale).filter(([, value]) &#x3D;&gt; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;).map(([, value]) &#x3D;&gt; value);
+					for (const key of keys) {
+						if (option.nameLocalisation![key] !&#x3D;&#x3D; restOption.name_localizations[key]) {
+							console.log(option.nameLocalisation![key], restOption.name_localizations[key])
+							return true;
+						}
+					}
+				}
+				if (option.descriptionLocalisation !&#x3D; null &amp;&amp; restOption.description_localizations &#x3D;&#x3D; null) return true;
+				if (option.descriptionLocalisation &#x3D;&#x3D; null &amp;&amp; restOption.description_localizations !&#x3D; null) return true;
+				if ((option.descriptionLocalisation !&#x3D;&#x3D; restOption.description_localizations) &amp;&amp; option.descriptionLocalisation !&#x3D; null &amp;&amp; restOption.description_localizations !&#x3D; null) {
+					const keys &#x3D; Object.entries(Locale).filter(([, value]) &#x3D;&gt; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;).map(([, value]) &#x3D;&gt; value);
+					for (const key of keys) {
+						if (option.descriptionLocalisation![key] !&#x3D;&#x3D; restOption.description_localizations[key]) {
+							console.log(option.descriptionLocalisation![key], restOption.description_localizations[key])
+							return true;
+						}
+					}
+				}
+			}
+			return false;
+		}
+		const isPermissionsChanged &#x3D; (interaction: BaseSlashCommand, restInteraction: any): boolean &#x3D;&gt; {
+			return interaction.getPermissionValue().toString() !&#x3D; restInteraction.default_member_permissions;
+		}
+
+		const isOptionsChanged &#x3D; (interaction: BaseSlashCommand, restInteraction: any): boolean &#x3D;&gt; {
+			if (interaction.getOptions().length &gt; 0 &amp;&amp; restInteraction.options &#x3D;&#x3D;&#x3D; undefined) return true;
+			if (interaction.getOptions().length &#x3D;&#x3D;&#x3D; 0 &amp;&amp; restInteraction.options !&#x3D;&#x3D; undefined &amp;&amp; interaction.getOptionsSub() &#x3D;&#x3D;&#x3D; undefined) return true;
+			if (restInteraction.options !&#x3D;&#x3D; undefined) {
+				if (interaction.getOptionsSub() !&#x3D;&#x3D; undefined &amp;&amp; (interaction.getOptionsSub()!.length &#x3D;&#x3D;&#x3D; restInteraction.options.length)) {
+					return isSubCommandsChanged(interaction, restInteraction);
+				}
+			}
+			if (restInteraction.options !&#x3D;&#x3D; undefined &amp;&amp; interaction.getOptions().length !&#x3D;&#x3D; restInteraction.options.length) return true;
+			for (const option of interaction.getOptions()) {
+				const restOption &#x3D; restInteraction.options.find((o: any) &#x3D;&gt; o.name &#x3D;&#x3D;&#x3D; option.name);
+				if (restOption &#x3D;&#x3D;&#x3D; undefined) return true;
+				if (option.description !&#x3D;&#x3D; restOption.description) return true;
+				if (option.type !&#x3D;&#x3D; restOption.type) return true;
+				if (option.autocomplete !&#x3D;&#x3D; restOption.autocomplete) return true;
+				if (option.required !&#x3D; restOption.required &amp;&amp; (option.required &#x3D;&#x3D;&#x3D; true &amp;&amp; !restOption.required)) {
+					return true;
+				}
+				if (option.choices &#x3D;&#x3D; undefined &amp;&amp; restOption.choices &#x3D;&#x3D; undefined) continue 
+				if (option.choices &#x3D;&#x3D; undefined) return true;
+				if (option.choices.length &gt; 0 &amp;&amp; restOption.choices &#x3D;&#x3D;&#x3D; undefined) return true;
+				if (option.choices.length !&#x3D;&#x3D; restOption.choices.length) return true;
+				for (const choice of option.choices) {
+					const restChoice &#x3D; restOption.choices.find((c: any) &#x3D;&gt; c.name &#x3D;&#x3D;&#x3D; choice.name);
+					if (restChoice &#x3D;&#x3D;&#x3D; undefined) return true;
+					if (choice.value !&#x3D;&#x3D; restChoice.value) return true;
+					if (choice.name !&#x3D;&#x3D; restChoice.name) return true;
+				}
+			}
+			return false;
+		}
+
+		const isSubCommandsChanged &#x3D; (interaction: BaseSlashCommand, restInteraction: any): boolean &#x3D;&gt; {
+			if (interaction.getOptionsSub() !&#x3D;&#x3D; undefined &amp;&amp; interaction.getOptionsSub()!.length !&#x3D;&#x3D; restInteraction.options.length) return true;
+			for (const option of interaction.getOptionsSub() || []) {
+				const restOption &#x3D; restInteraction.options.find((o: any) &#x3D;&gt; o.name &#x3D;&#x3D;&#x3D; option.name);
+				if (restOption &#x3D;&#x3D;&#x3D; undefined) return true;
+				if (option.description !&#x3D;&#x3D; restOption.description) return true;
+				if (option.type !&#x3D;&#x3D; restOption.type) return true;
+				const subCommandStatus &#x3D; false;
+				if (option.type &#x3D;&#x3D;&#x3D; 1) {
+					const subCommand &#x3D; interaction.getSubCommands().find((s: any) &#x3D;&gt; s.name &#x3D;&#x3D;&#x3D; option.name);
+					if (subCommand &#x3D;&#x3D;&#x3D; undefined) return true;
+					if (isOptionsChanged(subCommand, restOption)) {
+						return true;
+					}
+				}
+				if (subCommandStatus) return true;
+				if (option.type &#x3D;&#x3D;&#x3D; 2) {
+					const subCommandGroup &#x3D; interaction.getSubCommandsGroups().find((s: any) &#x3D;&gt; s.name &#x3D;&#x3D;&#x3D; option.name);
+					if (subCommandGroup &#x3D;&#x3D;&#x3D; undefined) return true;
+					if (isOptionsChanged(subCommandGroup, restOption)) {
+						return true;
+					}
+				}
+				if (subCommandStatus) return true;
+			}
+			return false;
+		}
+			
+
+		if (restInteraction &#x3D;&#x3D;&#x3D; undefined) return 1;
+		if (interaction.getDescription() !&#x3D;&#x3D; restInteraction.description) return 2;
+		if (isLocalizationsChanged(interaction, restInteraction)) return 3;
+		if (isPermissionsChanged(interaction, restInteraction)) return 4;
+		if (isOptionsChanged(interaction, restInteraction)) return 5;
+		if (interaction.getPermissionValue().toString() !&#x3D; restInteraction.default_member_permissions) return 6;
+		return 0;
+	}
+
+	/**
+	 * @description Execute the command
+	 * @param {string} commandName Command name
+	 * @param {Client} client Discord Client
+	 * @param {Message} message Discord Message
+	 * @param {string[]} args Command arguments
+	 * @example
+	 * // runs the ping command
+	 * module.runCommand(&#x27;ping&#x27;, client, message, args);
+	 * @example
+	 * // runs the ping command with the argument &#x27;test&#x27;
+	 * module.runCommand(&#x27;ping&#x27;, client, message, [&#x27;test&#x27;]);
+	 */
+	public executeCommand(commandName: string, client: any, message: any, args: string[]): void {
+		const command &#x3D; this.commands.get(commandName) || this.aliases.get(commandName);
+		if (!command) return;
+		try {
+			command.execute(client, message, args);
+		} catch (error) {
+			console.error(error);
+			message.reply(&quot;there was an error trying to execute that command!&quot;);
+		}
+	}
+}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'DatabaseUserSchema.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -289,6 +289,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Client, REST } from &quot;discord.js&quot;;
 import { BaseModule } from &quot;@src/structures&quot;;
 import eventLoader from &quot;@events/loader&quot;
+import * as fs from &quot;fs&quot;;
 
 /**
  * @description Base class for client
@@ -329,6 +330,23 @@ export class BaseClient extends Client {
 	 */
 	public getModules(): Map&lt;string, BaseModule&gt; {
 		return this.modules;
+	}
+
+	/**
+	 * @description Returns a module of the client
+	 * @param {string} name
+	 * @returns {BaseModule}
+	 * @example
+	 * // returns a module of the client
+	 * client.getModule(&quot;Game&quot;);
+	 * @throws {Error} If the module is not found
+	 * @throws {Error} If the module name is not a string
+	 */
+	public getModule(name: string): BaseModule {
+		if (typeof name !&#x3D;&#x3D; &quot;string&quot;) throw new Error(&#x60;The module name ${name} is not a string&#x60;);
+		const module &#x3D; this.modules.get(name);
+		if (!module) throw new Error(&#x60;The module ${name} is not found&#x60;);
+		return module;
 	}
 
 	/**
@@ -395,17 +413,56 @@ export class BaseClient extends Client {
 			this.addModule(module);
 		});
 	}
-	
+
+
 	/**
 	 * @description Load the modules of the client
 	 * @returns {Promise&lt;void&gt;}
 	 * @example
 	 * // load the modules of the client
 	 * client.loadModules();
+	 * @throws {Error} If the module is not an instance of BaseModule
+	 * @throws {Error} If the module name is not a string
+	 * @throws {Error} If the module already exists
 	 */
-	async loadModules(): Promise&lt;void&gt; {
+	async loadModules(path: string, options: {name: string, isActive: boolean}[] &#x3D; []): Promise&lt;void&gt; {
+		const modulesFiles &#x3D; await fs.promises.readdir(path);
+		for (const file of modulesFiles) {
+			const lstat &#x3D; await fs.promises.lstat(&#x60;${path}/${file}&#x60;);
+			if (!file.endsWith(&quot;.module.ts&quot;) || !lstat.isFile()) continue;
+			const module &#x3D; await import(&#x60;${path}/${file}&#x60;);
+			try {
+				new module[Object.keys(module)[0]]();
+			} catch {
+				console.log(&#x60;The module ${file} is not an instance of BaseModule, skipping...&#x60;);
+				continue;
+			}
+			const moduleInstance &#x3D; new module[Object.keys(module)[0]]();
+			if (!(moduleInstance instanceof BaseModule)) 
+				throw new Error(&#x60;The module ${moduleInstance} is not an instance of BaseModule&#x60;);
+			if (this.modules.has(moduleInstance.getName()))
+				throw new Error(&#x60;The module ${moduleInstance.getName()} already exists&#x60;);
+			const option &#x3D; options.find((option) &#x3D;&gt; option.name &#x3D;&#x3D;&#x3D; moduleInstance.getName());
+			if (option &amp;&amp; option.isActive &#x3D;&#x3D;&#x3D; false) {
+				console.log(&#x60;The module ${moduleInstance.getName()} is not active, skipping...&#x60;);
+				continue
+			}
+			console.log(&#x60;Module ${moduleInstance.getName()} added&#x60;);
+			this.modules.set(moduleInstance.getName(), moduleInstance);
+		}
+	}
+
+	
+	/**
+	 * @description Load the commands of the modules of the client
+	 * @returns {Promise&lt;void&gt;}
+	 * @example
+	 * // load the commands of the  modules of the client
+	 * client.loadModules();
+	 */
+	async loadModulesCommands(): Promise&lt;void&gt; {
 		let restSlashCommands &#x3D; await this.baseRest.get(
-			&#x60;/applications/${this.clientId}/commands&#x60;,
+			&#x60;/applications/${this.clientId}/commands?with_localizations&#x3D;true&#x60;,
 		) as any[];
 		let hasChanged &#x3D; false;
 		const registeredSlashCommand &#x3D; [];
@@ -417,7 +474,7 @@ export class BaseClient extends Client {
 			if (hasChanged) {
 				//console.log(restSlashCommands);
 				restSlashCommands &#x3D; await this.baseRest.get(
-					&#x60;/applications/${this.clientId}/commands&#x60;,
+					&#x60;/applications/${this.clientId}/commands?with_localizations&#x3D;true&#x60;,
 				) as any[];
 			}
 
@@ -442,7 +499,7 @@ export class BaseClient extends Client {
 		}
 		
 	}
-
+	
 	/**
 	 * @description Load the events of the client
 	 * @returns {Promise&lt;void&gt;}

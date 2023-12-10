@@ -216,7 +216,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/events/bot/clientReady.event.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/events/bot/clientReady.event.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -330,7 +330,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseEvent.html#source" target="_self" >BaseEvent:23</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseEvent.html#source" target="_self" >BaseEvent:21</a></code>
 </div>
                         </td>
                     </tr>
@@ -399,8 +399,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/events/bot/clientReady.event.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/events/bot/clientReady.event.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -461,15 +461,15 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>loadingTickets(guild: Guild, guildDB: <a href="../classes/GuildHandler.html" target="_self">GuildHandler</a>)</code>
+                    <code>loadingTickets(guild: Guild, guildDB: GuildHandler)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="76"
-                                    class="link-to-prism">src/events/bot/clientReady.event.ts:76</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/events/bot/clientReady.event.ts:83</a></div>
                         </td>
                     </tr>
 
@@ -504,7 +504,7 @@
                                         <tr>
                                                 <td>guildDB</td>
                                             <td>
-                                                            <code><a href="../classes/GuildHandler.html" target="_self" >GuildHandler</a></code>
+                                                        <code>GuildHandler</code>
                                             </td>
 
                                             <td>
@@ -542,15 +542,15 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>loadingUsers(guild: Guild, guildDB: <a href="../classes/GuildHandler.html" target="_self">GuildHandler</a>)</code>
+                    <code>loadingUsers(guild: Guild, guildDB: GuildHandler)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="61"
-                                    class="link-to-prism">src/events/bot/clientReady.event.ts:61</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/events/bot/clientReady.event.ts:68</a></div>
                         </td>
                     </tr>
 
@@ -585,7 +585,7 @@
                                         <tr>
                                                 <td>guildDB</td>
                                             <td>
-                                                            <code><a href="../classes/GuildHandler.html" target="_self" >GuildHandler</a></code>
+                                                        <code>GuildHandler</code>
                                             </td>
 
                                             <td>
@@ -620,9 +620,7 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BaseEvent, BaseClient  } from &quot;@src/structures&quot;;
 import { ActivitiesOptions, ActivityType, Events, Guild, TextChannel } from &quot;discord.js&quot;;
-import { GuildHandler } from &quot;@src/structures/database/handler/guild.handler.class&quot;;
-import { UserHandler } from &quot;@src/structures/database/handler/user.handler.class&quot;;
-import { TicketHandler } from &quot;@src/structures/database/handler/ticket.handler.class&quot;;
+import { GuildHandler, UserHandler, TicketHandler } from &quot;kikku-database-middleware&quot;
 import { TicketManager } from &quot;@src/structures/tickets/ticketManager.class&quot;;
 
 /**TicketDB
@@ -643,9 +641,18 @@ export class ReadyEvent extends BaseEvent {
 	async execute(client: BaseClient): Promise&lt;void&gt; {
 		console.log(&#x60;Logged in as ${client.user?.tag}&#x60;);
 
-		let statusIndex &#x3D; 0;
+		const statusIndex &#x3D; 0;
 		const { VERSION, BOT_NAME } &#x3D; client.getKeys();
-		setInterval(() &#x3D;&gt; {
+		const status &#x3D; &#x60;${BOT_NAME ? BOT_NAME : &quot;?&quot;} v${VERSION ? VERSION : &quot;?&quot;}&#x60;; // You can change the status here
+		const activity &#x3D; { 
+			type: ActivityType.Playing, 
+			name: status,
+		} as ActivitiesOptions;
+		client.user?.setPresence({
+			activities: [activity],
+			status: &quot;online&quot;
+		})
+		/*setInterval(() &#x3D;&gt; {
 			const status &#x3D; [&#x60;${BOT_NAME ? BOT_NAME : &quot;?&quot;} v${VERSION ? VERSION : &quot;?&quot;}&#x60;, &quot;Developped by Serena Satella&quot;]; // You can change the status here
 			const activity &#x3D; { 
 				type: ActivityType.Playing, 
@@ -656,7 +663,7 @@ export class ReadyEvent extends BaseEvent {
 				status: &quot;online&quot;
 			})
 			if (statusIndex &lt; status.length - 1) statusIndex++; else statusIndex &#x3D; 0;
-		}, 10000);
+		}, 10000);*/
 		await this.loadingGuilds(client);
 	}
 
@@ -673,7 +680,7 @@ export class ReadyEvent extends BaseEvent {
 					console.log(&#x60;Guild ${guild.name} created&#x60;);
 				}
 				await this.loadingUsers(guild, guildDB);
-				await this.loadingTickets(guild, guildDB);
+				//await this.loadingTickets(guild, guildDB);
 			});
 		})
 	}

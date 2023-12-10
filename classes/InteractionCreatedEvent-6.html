@@ -102,7 +102,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >DBConnection</li>
+  <li class="breadcrumb-item" >InteractionCreatedEvent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -126,11 +126,17 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/structures/database/dbConnection.db.class.ts</code>
+            <code>src/events/interaction/interactionCreatedStringSelectMenu.event.ts</code>
         </p>
 
 
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../classes/BaseEvent.html" target="_self" >BaseEvent</a></code>
+            </p>
 
 
 
@@ -147,13 +153,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#_sequelize" >_sequelize</a>
+                                <a href="#name" >name</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                    <span class="modifier">Static</span>
-                                <a href="#instance" >instance</a>
+                                <a href="#once" >once</a>
                             </li>
                         </ul>
                     </td>
@@ -168,8 +171,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#getInstance" >getInstance</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#execute" >execute</a>
                             </li>
                         </ul>
                     </td>
@@ -179,20 +182,6 @@
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#sequelize" >sequelize</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
@@ -203,13 +192,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                                <span class="modifier">Private</span>
-                        <code>constructor()</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/structures/database/dbConnection.db.class.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/events/interaction/interactionCreatedStringSelectMenu.event.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -226,23 +214,29 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="_sequelize"></a>
+                    <a name="name"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>_sequelize</b></span>
-                        <a href="#_sequelize"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>Sequelize</code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </td>
                 </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseEvent.html" target="_self" >BaseEvent</a></code>
+</div>
+                            </td>
+                        </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/structures/database/dbConnection.db.class.ts:6</a></div>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseEvent.html#source" target="_self" >BaseEvent:11</a></code>
+</div>
                         </td>
                     </tr>
 
@@ -253,24 +247,29 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="instance"></a>
+                    <a name="once"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
-                            <span class="modifier">Static</span>
-                        <span ><b>instance</b></span>
-                        <a href="#instance"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>once</b></span>
+                        <a href="#once"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/DBConnection.html" target="_self" >DBConnection</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </td>
                 </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseEvent.html" target="_self" >BaseEvent</a></code>
+</div>
+                            </td>
+                        </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/structures/database/dbConnection.db.class.ts:5</a></div>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseEvent.html#source" target="_self" >BaseEvent:12</a></code>
+</div>
                         </td>
                     </tr>
 
@@ -288,26 +287,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getInstance"></a>
+                    <a name="execute"></a>
                     <span class="name">
-                            <span class="modifier">Static</span>
-                        <span ><b>getInstance</b></span>
-                        <a href="#getInstance"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>execute</b></span>
+                        <a href="#execute"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getInstance()</code>
+                    <code>execute(client: <a href="../classes/BaseClient.html" target="_self">BaseClient</a>, interaction: Interaction)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="38"
-                                    class="link-to-prism">src/structures/database/dbConnection.db.class.ts:38</a></div>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseEvent.html" target="_self" >BaseEvent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseEvent.html#source" target="_self" >BaseEvent:24</a></code>
+</div>
                         </td>
                     </tr>
 
@@ -315,10 +320,52 @@
             <tr>
                 <td class="col-md-4">
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                            <code><a href="../classes/BaseClient.html" target="_self" >BaseClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>interaction</td>
+                                            <td>
+                                                        <code>Interaction</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/DBConnection.html" target="_self" >DBConnection</a></code>
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -329,88 +376,52 @@
 
 
 
-            <section data-compodoc="block-accessors">
-    <h3 id="accessors">
-        Accessors
-    </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="sequelize"></a>
-                        <span class="name"><b>sequelize</b><a href="#sequelize"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>sequelize()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/structures/database/dbConnection.db.class.ts:50</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-</section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Sequelize, ConnectionError, ConnectionTimedOutError, TimeoutError } from &quot;sequelize&quot;;
-import dotenv from &quot;dotenv&quot;;
-dotenv.config();
-export class DBConnection {
-	private static instance: DBConnection;
-	private _sequelize: Sequelize;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BaseInteraction, BaseEvent, BaseClient } from &quot;@src/structures&quot;;
+import { Events, Interaction } from &quot;discord.js&quot;
+import { Exception } from &quot;@src/structures/exception/exception.class&quot;;
+import { Logger, LoggerTypeEnum, LoggerFileEnum } from &quot;@src/structures/logger/logger.class&quot;;
+import { t } from &quot;i18next&quot;;
 
-	private constructor() {
-		if (process.env.DB_NAME &#x3D;&#x3D;&#x3D; undefined || 
-			process.env.DB_USER &#x3D;&#x3D;&#x3D; undefined || 
-			process.env.DB_PASS &#x3D;&#x3D;&#x3D; undefined || 
-			process.env.DB_HOST &#x3D;&#x3D;&#x3D; undefined || 
-			process.env.DB_PORT &#x3D;&#x3D;&#x3D; undefined) {
-			throw new Error(&quot;Missing database environment variables&quot;);
-		}
-		this._sequelize &#x3D; new Sequelize(
-			process.env.DB_NAME,
-			process.env.DB_USER,
-			process.env.DB_PASS,
-			{
-				dialect: &quot;mariadb&quot;,
-				host: process.env.DB_HOST,
-				port: parseInt(process.env.DB_PORT),
-				retry: {
-					max: 5,
-					match: [
-						ConnectionError,
-						ConnectionTimedOutError,
-						TimeoutError,
-						/Deadlock/i,
-						&quot;SQLITE_BUSY&quot;,
-					]
-				},
-			}
-		);
+/**
+ * @description InteractionCreated event
+ * @category Events
+ * @extends BaseEvent
+ */
+export class InteractionCreatedEvent extends BaseEvent {
+	constructor() {
+		super(Events.InteractionCreate, false);
 	}
 
-	public static getInstance(): DBConnection {
-		if (!DBConnection.instance) {
+	/**
+	 * @description Executes the event
+	 * @param {BaseClient} client
+	 * @param {Interaction} interaction
+	 * @returns {Promise&lt;void&gt;}
+	 * @override
+	 */
+	async execute(client: BaseClient, interaction: Interaction): Promise&lt;void&gt; {
+		if (!interaction.isStringSelectMenu()) return;
+		for (const module of client.getModules().values()) {
+			if (module.getInteractions().size &#x3D;&#x3D; 0) continue;	
+			if (!module.getInteractions().has(interaction.customId)) continue;
+			const command: BaseInteraction | undefined &#x3D; module.getInteractions().get(interaction.customId);
+			if (!command) continue;
 			try {
-				DBConnection.instance &#x3D; new DBConnection();
-			} catch (err) {
-				console.error(err);
-				process.exit(0);
+				await Logger.log(&#x60;Command ${command.getName()} was executed by ${interaction.user.tag} (${interaction.user.id})&#x60;, LoggerTypeEnum.INFO, true, LoggerFileEnum.INFO, client);
+				await command.execute(client, interaction);
+			} catch (error: unknown) {
+				if (error instanceof Error)
+					await Logger.log(Exception.getErrorMessageLogFormat(error.message, error.stack), &quot;error&quot;, true, LoggerFileEnum.INFO, client);
+				if (!interaction) return;
+				if (interaction.replied) await interaction.editReply({ content: t(&quot;error.command&quot;, { command: command.getName(), user: &#x60;&lt;@${client.getAuthorId()}&gt;&#x60;})});
+				if (interaction.deferred) await interaction.editReply({ content: t(&quot;error.command&quot;, { command: command.getName(), user: &#x60;&lt;@${client.getAuthorId()}&gt;&#x60;})});
+				if (!interaction.deferred) await interaction.reply({ content: t(&quot;error.command&quot;, { command: command.getName(), user: &#x60;&lt;@${client.getAuthorId()}&gt;&#x60;}), ephemeral: true});
 			}
 		}
-		return DBConnection.instance;
-	}
-
-	public get sequelize(): Sequelize {
-		return this._sequelize;
 	}
 }</code></pre>
     </div>
@@ -450,7 +461,7 @@ export class DBConnection {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'DBConnection.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'InteractionCreatedEvent-6.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

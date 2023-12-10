@@ -126,7 +126,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/commands/Game/HeadTales/HeadTales.command.ts</code>
+            <code>src/commands/Game/HeadTales/HeadTales.interaction.ts</code>
         </p>
 
 
@@ -135,7 +135,7 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                            <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
             </p>
 
 
@@ -154,14 +154,34 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#aliases" >aliases</a>
+                                <a href="#descriptionLocalizations" >descriptionLocalizations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#dmAllowed" >dmAllowed</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#nameLocalizations" >nameLocalizations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#slashCommand" >slashCommand</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subCommands" >subCommands</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subCommandsGroups" >subCommandsGroups</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#cooldown" >cooldown</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Protected</span>
                                 <a href="#description" >description</a>
                             </li>
                             <li>
@@ -173,20 +193,16 @@
                                 <a href="#module" >module</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Protected</span>
                                 <a href="#name" >name</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#nsfw" >nsfw</a>
+                                    <span class="modifier">Protected</span>
+                                <a href="#options" >options</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#permissions" >permissions</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#usage" >usage</a>
                             </li>
                         </ul>
                     </td>
@@ -206,11 +222,63 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getAliases" >getAliases</a>
+                                <a href="#addChoices" >addChoices</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getCooldown" >getCooldown</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#afterRegistered" >afterRegistered</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#beforeRegistered" >beforeRegistered</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#buildSlashCommand" >buildSlashCommand</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDescriptionLocalizations" >getDescriptionLocalizations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getNameLocalizations" >getNameLocalizations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getOptions" >getOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getOptionsSub" >getOptionsSub</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSlashCommand" >getSlashCommand</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSubCommands" >getSubCommands</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSubCommandsGroups" >getSubCommandsGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeChoices" >removeChoices</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateSlashCommand" >updateSlashCommand</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#autoComplete" >autoComplete</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -218,7 +286,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getModule" >getModule</a>
+                                <a href="#getJSON" >getJSON</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -226,19 +294,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getPermissions" >getPermissions</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#getUsage" >getUsage</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#isEnabled" >isEnabled</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#isNSFW" >isNSFW</a>
+                                <a href="#getPermissionValue" >getPermissionValue</a>
                             </li>
                         </ul>
                     </td>
@@ -263,7 +319,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/commands/Game/HeadTales/HeadTales.command.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/commands/Game/HeadTales/HeadTales.interaction.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -280,29 +336,214 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="aliases"></a>
+                    <a name="descriptionLocalizations"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
-                        <span ><b>aliases</b></span>
-                        <a href="#aliases"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>descriptionLocalizations</b></span>
+                        <a href="#descriptionLocalizations"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>string[]</code>
+                        <i>Type : </i>    <code>LocalizationMap | null</code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:13</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:49</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dmAllowed"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>dmAllowed</b></span>
+                        <a href="#dmAllowed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>boolean | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:50</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nameLocalizations"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>nameLocalizations</b></span>
+                        <a href="#nameLocalizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>LocalizationMap | null</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:48</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slashCommand"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>slashCommand</b></span>
+                        <a href="#slashCommand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SlashCommandBuilder</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:45</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subCommands"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>subCommands</b></span>
+                        <a href="#subCommands"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/BaseSubSlashCommand.html" target="_self" >BaseSubSlashCommand[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:46</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subCommandsGroups"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>subCommandsGroups</b></span>
+                        <a href="#subCommandsGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/BaseSubGroupSlashCommand.html" target="_self" >BaseSubGroupSlashCommand[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:47</a></code>
 </div>
                         </td>
                     </tr>
@@ -330,13 +571,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:18</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:26</a></code>
 </div>
                         </td>
                     </tr>
@@ -350,7 +591,7 @@
                 <td class="col-md-4">
                     <a name="description"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
+                            <span class="modifier">Protected</span>
                         <span ><b>description</b></span>
                         <a href="#description"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -364,13 +605,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:16</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:23</a></code>
 </div>
                         </td>
                     </tr>
@@ -398,13 +639,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:14</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:25</a></code>
 </div>
                         </td>
                     </tr>
@@ -437,13 +678,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:15</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:28</a></code>
 </div>
                         </td>
                     </tr>
@@ -457,7 +698,7 @@
                 <td class="col-md-4">
                     <a name="name"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
+                            <span class="modifier">Protected</span>
                         <span ><b>name</b></span>
                         <a href="#name"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -471,13 +712,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:12</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:22</a></code>
 </div>
                         </td>
                     </tr>
@@ -489,28 +730,29 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="nsfw"></a>
+                    <a name="options"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>nsfw</b></span>
-                        <a href="#nsfw"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Protected</span>
+                        <span ><b>options</b></span>
+                        <a href="#options"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:20</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:24</a></code>
 </div>
                         </td>
                     </tr>
@@ -532,53 +774,19 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>string[]</code>
+                        <i>Type : </i>    <code>[]</code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                                <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                             </td>
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:19</a></code>
-</div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="usage"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>usage</b></span>
-                        <a href="#usage"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
-</div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:17</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:27</a></code>
 </div>
                         </td>
                     </tr>
@@ -608,20 +816,20 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>execute(client: <a href="../classes/BaseClient.html" target="_self">BaseClient</a>, message: Message)</code>
+                    <code>execute(client: <a href="../classes/BaseClient.html" target="_self">BaseClient</a>, interaction: ChatInputCommandInteraction)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:23</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:27</a></code>
 </div>
                         </td>
                     </tr>
@@ -655,9 +863,9 @@
 
                                         </tr>
                                         <tr>
-                                                <td>message</td>
+                                                <td>interaction</td>
                                             <td>
-                                                        <code>Message</code>
+                                                        <code>ChatInputCommandInteraction</code>
                                             </td>
 
                                             <td>
@@ -684,31 +892,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAliases"></a>
+                    <a name="addChoices"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getAliases</b></span>
-                        <a href="#getAliases"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>addChoices</b></span>
+                        <a href="#addChoices"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getAliases()</code>
+                    <code>addChoices(choices: APIApplicationCommandOptionChoice<string | number>[], optionName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
 </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:51</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:182</a></code>
 </div>
                         </td>
                     </tr>
@@ -716,11 +924,48 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><b>Example :</b><div><pre class="line-numbers"><code class="language-html">// returns [&#39;alias1&#39;, &#39;alias2&#39;]
-command.getAliases();</code></pre></div></div>
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>choices</td>
+                                            <td>
+                                                        <code>APIApplicationCommandOptionChoice&lt;string | number&gt;[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>optionName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>string[]</code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
                             <div class="io-description">
@@ -734,31 +979,282 @@ command.getAliases();</code></pre></div></div>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getCooldown"></a>
+                    <a name="afterRegistered"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getCooldown</b></span>
-                        <a href="#getCooldown"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>afterRegistered</b></span>
+                        <a href="#afterRegistered"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getCooldown()</code>
+                    <code>afterRegistered(client: <a href="../classes/BaseClient.html" target="_self">BaseClient</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
 </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:75</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:264</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                            <code><a href="../classes/BaseClient.html" target="_self" >BaseClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeRegistered"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>beforeRegistered</b></span>
+                        <a href="#beforeRegistered"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>beforeRegistered(client: <a href="../classes/BaseClient.html" target="_self">BaseClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:254</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><b>Example :</b><div><pre class="line-numbers"><code class="language-html"></code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                            <code><a href="../classes/BaseClient.html" target="_self" >BaseClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildSlashCommand"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>buildSlashCommand</b></span>
+                        <a href="#buildSlashCommand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buildSlashCommand(dmAllowed: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, bitField, options: <a href="../interfaces/SlashCommandOptions.html" target="_self">SlashCommandOptions[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:65</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dmAllowed</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>bitField</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>options</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SlashCommandOptions.html" target="_self" >SlashCommandOptions[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>SlashCommandBuilder</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDescriptionLocalizations"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getDescriptionLocalizations</b></span>
+                        <a href="#getDescriptionLocalizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDescriptionLocalizations()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:173</a></code>
 </div>
                         </td>
                     </tr>
@@ -768,7 +1264,548 @@ command.getAliases();</code></pre></div></div>
                 <td class="col-md-4">
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                            <b>Returns : </b>    <code>LocalizationMap | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNameLocalizations"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getNameLocalizations</b></span>
+                        <a href="#getNameLocalizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNameLocalizations()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:163</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>LocalizationMap | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOptions"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getOptions</b></span>
+                        <a href="#getOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOptions()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:278</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><b>Example :</b><div><pre class="line-numbers"><code class="language-html">// returns []
+command.getOptions();</code></pre></div></div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/SlashCommandOptions.html" target="_self" >SlashCommandOptions[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOptionsSub"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getOptionsSub</b></span>
+                        <a href="#getOptionsSub"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOptionsSub()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:286</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>[] | undefined</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSlashCommand"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getSlashCommand</b></span>
+                        <a href="#getSlashCommand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSlashCommand()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:136</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>SlashCommandBuilder</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubCommands"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getSubCommands</b></span>
+                        <a href="#getSubCommands"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSubCommands()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:145</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/BaseSubSlashCommand.html" target="_self" >BaseSubSlashCommand[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubCommandsGroups"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getSubCommandsGroups</b></span>
+                        <a href="#getSubCommandsGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSubCommandsGroups()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:154</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/BaseSubGroupSlashCommand.html" target="_self" >BaseSubGroupSlashCommand[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeChoices"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>removeChoices</b></span>
+                        <a href="#removeChoices"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeChoices(choices: APIApplicationCommandOptionChoice<string | number>[], optionName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:211</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>choices</td>
+                                            <td>
+                                                        <code>APIApplicationCommandOptionChoice&lt;string | number&gt;[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>optionName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSlashCommand"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateSlashCommand</b></span>
+                        <a href="#updateSlashCommand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateSlashCommand(client: <a href="../classes/BaseClient.html" target="_self">BaseClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseSlashCommand.html" target="_self" >BaseSlashCommand</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseSlashCommand.html#source" target="_self" >BaseSlashCommand:232</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                            <code><a href="../classes/BaseClient.html" target="_self" >BaseClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="autoComplete"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>autoComplete</b></span>
+                        <a href="#autoComplete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>autoComplete(interaction: Interaction, client: <a href="../classes/BaseClient.html" target="_self">BaseClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:96</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>interaction</td>
+                                            <td>
+                                                        <code>Interaction</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                            <code><a href="../classes/BaseClient.html" target="_self" >BaseClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -800,13 +1837,13 @@ command.getAliases();</code></pre></div></div>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:59</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:59</a></code>
 </div>
                         </td>
                     </tr>
@@ -814,6 +1851,8 @@ command.getAliases();</code></pre></div></div>
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><b>Example :</b><div><pre class="line-numbers"><code class="language-html">// returns &#39;command&#39;
+command.getDescription();</code></pre></div></div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
@@ -830,31 +1869,31 @@ command.getAliases();</code></pre></div></div>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getModule"></a>
+                    <a name="getJSON"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getModule</b></span>
-                        <a href="#getModule"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getJSON</b></span>
+                        <a href="#getJSON"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getModule()</code>
+                    <code>getJSON()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:91</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:67</a></code>
 </div>
                         </td>
                     </tr>
@@ -864,7 +1903,7 @@ command.getAliases();</code></pre></div></div>
                 <td class="col-md-4">
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
 
                         </div>
                             <div class="io-description">
@@ -896,13 +1935,13 @@ command.getAliases();</code></pre></div></div>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:40</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:47</a></code>
 </div>
                         </td>
                     </tr>
@@ -928,79 +1967,31 @@ command.getName();</code></pre></div></div>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getPermissions"></a>
+                    <a name="getPermissionValue"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>getPermissions</b></span>
-                        <a href="#getPermissions"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getPermissionValue</b></span>
+                        <a href="#getPermissionValue"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getPermissions()</code>
+                    <code>getPermissionValue()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
+                            <div class="io-line">Inherited from         <code><a href="../classes/BaseInteraction.html" target="_self" >BaseInteraction</a></code>
 </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:83</a></code>
-</div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>string[]</code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getUsage"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>getUsage</b></span>
-                        <a href="#getUsage"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getUsage()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
-</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:67</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/BaseInteraction.html#source" target="_self" >BaseInteraction:88</a></code>
 </div>
                         </td>
                     </tr>
@@ -1009,111 +2000,6 @@ command.getName();</code></pre></div></div>
             <tr>
                 <td class="col-md-4">
 
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="isEnabled"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>isEnabled</b></span>
-                        <a href="#isEnabled"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isEnabled()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
-</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:110</a></code>
-</div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><b>Example :</b><div><pre class="line-numbers"><code class="language-html">// returns true
-command.isEnabled();</code></pre></div></div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="isNSFW"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>isNSFW</b></span>
-                        <a href="#isNSFW"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isNSFW()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Inherited from         <code><a href="../classes/BaseCommand.html" target="_self" >BaseCommand</a></code>
-</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/BaseCommand.html#source" target="_self" >BaseCommand:99</a></code>
-</div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
                 </td>
             </tr>
         </tbody>
@@ -1128,19 +2014,23 @@ command.isEnabled();</code></pre></div></div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Message } from &quot;discord.js&quot;;
-import { BaseCommand, BaseClient } from &quot;@src/structures&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChatInputCommandInteraction, Message } from &quot;discord.js&quot;;
+import { BaseCommand, BaseClient, BaseSlashCommand, SlashCommandOptionType } from &quot;@src/structures&quot;;
 import { ButtonBuilder, ActionRowBuilder } from &quot;@discordjs/builders&quot;;
 import { ButtonStyle } from &quot;discord.js&quot;;
+import { randomInt } from &quot;crypto&quot;;
 
 /**
  * @description HeadTales command
  * @class HeadTales
  * @extends BaseCommand
  */
-export class HeadTalesCommand extends BaseCommand {
+export class HeadTalesCommand extends BaseSlashCommand {
 	constructor() {
-		super(&quot;headtales&quot;, [&quot;ht&quot;], &quot;Head Tales&quot;, &quot;Game&quot;, 0, true, []);
+		super({
+			name: &quot;headtales&quot;,
+			description: &quot;HeadTales&quot;,
+		});	
 	}
 
 	/**
@@ -1150,23 +2040,10 @@ export class HeadTalesCommand extends BaseCommand {
 	 * @param {string[]} args
 	 * @returns {Promise&lt;void&gt;}
 	 */
-	async execute(client: BaseClient, message: Message): Promise&lt;void&gt; {
-		message.channel.send(&quot;Head Tales&quot;);
-		const row &#x3D; new ActionRowBuilder&lt;ButtonBuilder&gt;()
-			.addComponents(
-				new ButtonBuilder()
-					.setCustomId(&quot;head&quot;)
-					.setLabel(&quot;Head&quot;)
-					.setStyle(ButtonStyle.Primary),
-				new ButtonBuilder()
-					.setCustomId(&quot;tails&quot;)
-					.setLabel(&quot;Tails&quot;)
-					.setStyle(ButtonStyle.Primary),
-			);
-		const msg &#x3D; await message.channel.send({ content: &quot;Choose Head or Tails&quot;, components: [row] });
-		msg.react(&quot;👍&quot;);
-
-
+	async execute(client: BaseClient, interaction: ChatInputCommandInteraction): Promise&lt;void&gt; {
+		await interaction.reply({
+			content: randomInt(0, 1) &#x3D;&#x3D;&#x3D; 0 ? &quot;Heads&quot; : &quot;Tails&quot;,
+		});
 	}
 }</code></pre>
     </div>
